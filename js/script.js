@@ -127,23 +127,42 @@ const icons = [
     }
 ];
 
-function drawCard() {
-    icons.forEach((value) => {
-        const row = document.querySelector('.row');
+const row = document.querySelector('.row');
+row.innerHTML = '';
+
+function selectIcon() {
+    const select = document.getElementById('selectIcon');
+    select.addEventListener('change', () => {
+        const selectedType = select.value;
+        // applichiamo filter estrapolando solo alcuni elementi di 'icons'
+        const filteredIcons = icons.filter((icon) => {
+            if (icon.type == selectedType) {
+                console.log(type);
+                return true;
+            } else {
+                return false;
+            }
+        });
+
         let cardContent = '';
-        const template = `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <div class="cardBody d-flex flex-column text-center p-3" style="color:${value.color}">
-                    <i class="${value.prefix}${value.family} ${value.prefix}${value.name} fs-1"></i>
-                    <div class="text-uppercase">${value.name}</div>
-                </div>
-            </div>
-        </div>
-        `;
-        cardContent += template;
-        row.innerHTML += cardContent;
-    });
+        // applichiamo forEach() per ogni elemento di 'icons'
+        filteredIcons.forEach((icon) => {
+            cardContent += drawIcon(icon);
+        });
+        row.innerHTML = cardContent;
+    })
 }
 
-drawCard();
+function drawIcon(icon) {
+    const template = `
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
+            <div class="cardBody d-flex flex-column text-center p-3" style="color:${icon.color}">
+                <i class="${icon.prefix}${icon.family} ${icon.prefix}${icon.name} fs-1"></i>
+                <div class="text-uppercase">${icon.name}</div>
+            </div>
+        </div>
+    </div>
+    `;
+    return template;
+}
