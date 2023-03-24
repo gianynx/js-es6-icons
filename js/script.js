@@ -10,7 +10,8 @@ Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone 
 1- modificare la struttura dati fornita e valorizzare la proprietà "color" in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F.
 2- popolare le options della select della milestone 3 dinamicamente.
 */
-// array di oggetti
+
+// array di oggetti 'icons'
 const icons = [
     {
         name: 'cat',
@@ -125,3 +126,24 @@ const icons = [
         color: 'blue'
     }
 ];
+
+function drawCard() {
+    icons.forEach((value) => {
+        const row = document.querySelector('.row');
+        let cardContent = '';
+        const template = `
+        <div class="col">
+            <div class="card">
+                <div class="cardBody d-flex flex-column text-center p-3">
+                    <i class="${value.prefix}${value.family} ${value.prefix}${value.name} fs-1"></i>
+                    <div class="text-uppercase">${value.name}</div>
+                </div>
+            </div>
+        </div>
+        `;
+        cardContent += template;
+        row.innerHTML += cardContent;
+    });
+}
+
+drawCard();

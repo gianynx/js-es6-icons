@@ -10,57 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>FontIcons</h1>
+        <div class="header_top p-3">
+            <h1>FontIcons</h1>
+        </div>
+        <div class="header_bottom d-flex justify-content-center align-content-center p-4">
+            <h4 class="text-uppercase px-3">Filtra per tipo</h4>
+            <select class="form-select" aria-label="Default select example">
+                <option value="All">All</option>
+                <option value="Animals">Animals</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Users">Users</option>
+              </select>
+        </div>
     </header>
     <main>
-        <div class="container">
-            <div class="row row-cols-5">
-                <div class="col-sm-12 col-md-3">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-2">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-2">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-2">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3 col-lg-2">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-3">
-                    <div class="card">
-                        <div class="cardBody">
-                            ciao
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container mx-auto pt-5">
+            <div class="row row-cols-5 gy-5"></div>
         </div>
     </main>
     

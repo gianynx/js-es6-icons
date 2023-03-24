@@ -1,0 +1,15 @@
+body {
+    font-family: 'Delicious Handrawn', cursive;
+}
+
+h1 {
+    color: #28aad4;
+}
+
+.header_bottom {
+    background-color: #28aad4;
+}
+
+.form-select {
+    width: 20%;
+}
