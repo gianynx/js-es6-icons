@@ -10,3 +10,118 @@ Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone 
 1- modificare la struttura dati fornita e valorizzare la proprietà "color" in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F.
 2- popolare le options della select della milestone 3 dinamicamente.
 */
+// array di oggetti
+const icons = [
+    {
+        name: 'cat',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'crow',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'dog',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'dove',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'dragon',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'horse',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'hippo',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'fish',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'solid',
+        color: 'orange'
+    },
+    {
+        name: 'carrot',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'solid',
+        color: 'green'
+    },
+    {
+        name: 'apple-alt',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'solid',
+        color: 'green'
+    },
+    {
+        name: 'lemon',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'solid',
+        color: 'green'
+    },
+    {
+        name: 'pepper-hot',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'solid',
+        color: 'green'
+    },
+    {
+        name: 'user-astronaut',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'solid',
+        color: 'blue'
+    },
+    {
+        name: 'user-graduate',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'solid',
+        color: 'blue'
+    },
+    {
+        name: 'user-ninja',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'solid',
+        color: 'blue'
+    },
+    {
+        name: 'user-secret',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'solid',
+        color: 'blue'
+    }
+];
