@@ -127,33 +127,7 @@ const icons = [
     }
 ];
 
-const row = document.querySelector('.row');
-row.innerHTML = '';
-
-function selectIcon() {
-    const select = document.getElementById('selectIcon');
-    select.addEventListener('change', () => {
-        const selectedType = select.value;
-        // applichiamo filter estrapolando solo alcuni elementi di 'icons'
-        const filteredIcons = icons.filter((icon) => {
-            if (icon.type == selectedType) {
-                console.log(type);
-                return true;
-            } else {
-                return false;
-            }
-        });
-
-        let cardContent = '';
-        // applichiamo forEach() per ogni elemento di 'icons'
-        filteredIcons.forEach((icon) => {
-            cardContent += drawIcon(icon);
-        });
-        row.innerHTML = cardContent;
-    })
-}
-
-function drawIcon(icon) {
+function iconTemplate(icon) {
     const template = `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card">
@@ -166,3 +140,33 @@ function drawIcon(icon) {
     `;
     return template;
 }
+
+function selectIcon() {
+    // console.log(selectIcon);
+    const select = document.querySelector('select');
+    // devo creare un array per i value di select?
+    // console.log(select);
+    select.addEventListener('change', () => {
+        let selectedType = select.value;
+        // console.log(selectedType);
+        // applichiamo filter estrapolando solo alcuni elementi di 'icons'
+        const filteredIcons = icons.filter((icon) => {
+            // console.log(icon.type);
+            if (icon.type == selectedType) {
+                console.log(selectedType);
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        const row = document.querySelector('.row');
+        row.innerHTML = '';
+        let cardContent;
+        // applichiamo forEach() per ogni elemento di 'icons'
+        filteredIcons.forEach((iconTpl) => cardContent += iconTemplate(iconTpl));
+        row.innerHTML = cardContent;
+    });
+}
+
+selectIcon();
