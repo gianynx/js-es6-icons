@@ -141,6 +141,15 @@ function iconTemplate(icon) {
     return template;
 }
 
+function initIcons(list) {
+    const row = document.querySelector('.row');
+    row.innerHTML = '';
+    let cardContent = list.map((iconTpl) => {
+        return iconTemplate(iconTpl);
+    }) // ho trasformato una lista di oggetti in una lista di stringhe!
+    cardContent.forEach((content) => row.innerHTML += content);
+}
+
 function selectIcon() {
     // console.log(selectIcon);
     const select = document.querySelector('select');
@@ -152,21 +161,16 @@ function selectIcon() {
         // applichiamo filter estrapolando solo alcuni elementi di 'icons'
         const filteredIcons = icons.filter((icon) => {
             // console.log(icon.type);
-            if (icon.type == selectedType) {
-                console.log(selectedType);
+            // console.log(selectedType == 'all');
+            if (icon.type == selectedType || selectedType == 'all') {
                 return true;
             } else {
                 return false;
             }
         });
-
-        const row = document.querySelector('.row');
-        row.innerHTML = '';
-        let cardContent;
-        // applichiamo forEach() per ogni elemento di 'icons'
-        filteredIcons.forEach((iconTpl) => cardContent += iconTemplate(iconTpl));
-        row.innerHTML = cardContent;
+        initIcons(filteredIcons);
     });
 }
 
+initIcons(icons);
 selectIcon();
