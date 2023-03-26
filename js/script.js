@@ -146,27 +146,20 @@ function initIcons(list) {
     row.innerHTML = '';
     let cardContent = list.map((iconTpl) => {
         return iconTemplate(iconTpl);
-    }) // ho trasformato una lista di oggetti in una lista di stringhe!
+    });
     cardContent.forEach((content) => row.innerHTML += content);
 }
 
 function selectIcon() {
-    // console.log(selectIcon);
     const select = document.querySelector('select');
-    // devo creare un array per i value di select?
-    // console.log(select);
     select.addEventListener('change', () => {
         let selectedType = select.value;
-        // console.log(selectedType);
-        // applichiamo filter estrapolando solo alcuni elementi di 'icons'
         const filteredIcons = icons.filter((icon) => {
-            // console.log(icon.type);
-            // console.log(selectedType == 'all');
             if (icon.type == selectedType || selectedType == 'all') {
                 return true;
             } else {
                 return false;
-            }
+            };
         });
         initIcons(filteredIcons);
     });
