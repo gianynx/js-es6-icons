@@ -141,6 +141,8 @@ function iconTemplate(icon) {
     return template;
 }
 
+// la funzione crea un array chiamato cardContent mappando ogni elemento dell'argomento list alla funzione iconTemplate usando il metodo map()
+// la funzione aggiunge ogni elemento dell'array cardContent all'innerhtml dell'elemento row usando un loop foreach() e l'operatore di concatenazione delle stringhe (+=)
 function initIcons(list) {
     const row = document.querySelector('.row');
     row.innerHTML = '';
@@ -150,6 +152,7 @@ function initIcons(list) {
     cardContent.forEach((content) => row.innerHTML += content);
 }
 
+// La funzione filtra l'array di icone in base al fatto che la proprietà del tipo di ogni icona corrisponda al tipo selezionato o se il tipo selezionato sia 'all', utilizzando il metodo filter() 
 function selectIcon() {
     const select = document.querySelector('select');
     select.addEventListener('change', () => {
