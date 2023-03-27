@@ -154,13 +154,7 @@ function selectIcon() {
     const select = document.querySelector('select');
     select.addEventListener('change', () => {
         let selectedType = select.value;
-        const filteredIcons = icons.filter((icon) => {
-            if (icon.type == selectedType || selectedType == 'all') {
-                return true;
-            } else {
-                return false;
-            };
-        });
+        const filteredIcons = icons.filter((icon) => icon.type == selectedType || selectedType == 'all');
         initIcons(filteredIcons);
     });
 }
